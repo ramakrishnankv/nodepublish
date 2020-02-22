@@ -1,0 +1,25 @@
+{
+  "name": "nodepublish",
+  "version": "1.0.0",
+  "description": "test npm publishing",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramakrishnankv/nodepublish"
+  },
+  "keywords": [
+    "'npm",
+    "publish",
+    "publish",
+    "publish",
+    "package",
+    "packaging",
+    "npm",
+    "publish"
+  ],
+  "author": "ramakrishnankv@yahoo.com",
+  "license": "ISC"
+}
