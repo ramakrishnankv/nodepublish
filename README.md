@@ -1,0 +1,2 @@
+# nodepublish
+test npm publishing
