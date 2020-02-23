@@ -58,8 +58,10 @@ Note: The example content is case sensitive
 Login to npm account through command line.
 
 $ npm login
-> Username: Drona \n
-> Password: arjuna \n
+> Username: Drona
+
+> Password: arjuna
+
 > Email: Drona@somemail.com
 
 On successful login it will prompt that "Drona logged in to https://www.npmjs.com"
