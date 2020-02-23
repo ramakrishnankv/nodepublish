@@ -1,34 +1,75 @@
 # nodepublish
-test npm publishing
+# Publishing packages to npm 
 
+## Prerequisite
+- git client installed to run commands through gitbash commandline tool to interact with git API.
+- npm and node installed
+- signed up to https://github.com/ repository
+- signed up to https://www.npmjs.com/signup
+- .npmrc is npm configuration file to define how npm should behave while running commands. This file would be available per user and available at c:/user/USER/.npmrc. By storing .npmrc file created per project helps to have different configuration for each project. .npmrc file to be placed in the root folder to be sibling of package.json or .gitignore files to be scoped for project.
 
-1) Login to npmjs.com | register: https://www.npmjs.com/signup
+## User Sample
+To understand clearly the following example data would be used further for explanation;
 
-2) Long to npm account through command line.
+Note: The example content is case sensitive
+- Username is Drona
+- Password is arjuna
+- Email is Drona@somemail.com
+- Repository name is photo-gallery
+- Organization is drona
+
+## Initial Setup
+### NPM
+- Login to https://www.npmjs.com
+- Click on avtar icon on top right and from the the drop down list select "Add Organization"
+- In https://www.npmjs.com/org/create - Create new Organization page, enter a name in the field. For this example use "drona" which would create Org as @drona. This is referred under "name" key in package.json as an identifier to the package location. How this is added to package.json is explained later.
+
+### Git
+- Login to https://github.com/
+- Create a new repository in https://github.com/drona?tab=repositories. To create one click on the "New" button on the right top in this page.
+- Enter a repo name photo-gallery.
+- Select "Public" which is for free but open for public access.
+- Choose the option to create read me file.
+- Click on Create repository button to create a repository https://github.com/drona/photo-gallery
+
+### Copy Git to local and make some changes
+- From https://github.com/drona/photo-gallery click on "Clone or Download" button to copy https url of the git repository. This would look like https://github.com/drona/photo-gallery.git.
+- Create a folder code and run gitbash from this folder.
+- Run git clone https://github.com/drona/photo-gallery.git. This will copy the code from the repo into a new folder called "photo-gallery". 
+- Run $ cd photo-gallery and move to newly created folder where the README.md file can be found.
+- Run $ npm init to create package.json.
+- When prompted for "name" enter "@drona/photo-gallery". It is very difficult to find an unique name for the package as many would be creating with similar name. To easily differentiate the org name @drona will help. 
+- Remember that when published, this package will be added to npm under the org name specified in the package.json.
+- When prompted to enter the repository type keep it as "git".
+- When prompted to enter the repository url enter "https://github.com/drona/photo-gallery.git".
+- Continue with rest of prompts to complete the creation of package.json.
+- In case any of the details in package.json need to be modified that can be done at a later point too.
+- Ensure .npmrc file is created under the root folder (under "photo-gallery" folder) if not already.
+- .npmrc file which is npm configuration, should have an entry registry=https://registry.npmjs.org
+- Make some changes to the code by adding some contents to README.md
+- Push the changes from workspace to git repository (git add ., git commit -m "changes", git push origin master).
+
+## Publishing Process
+Login to npm account through command line.
 
 $ npm login
-> Username: USERNAME
-> Password: TOKEN
-> Email: ramakrishnankv@yahoo.com
+> Username: Drona
+> Password: arjuna
+> Email: Drona@somemail.com
 
-# User
-Authenticate by logging
+On successful login it will prompt that "Drona logged in to https://www.npmjs.com"
 
-$ npm login --registry=https://npm.pkg.github.com
-> Username: USERNAME
-Password: TOKEN
-Email: ramakrishnankv@yahoo.com
+$ npm publish --access public
+Since it is public access (Unlimited free npm repo) --access public is required. On successful completion it will prompt + @drona/photo-gallery@1.0.0
 
-registry=https://npm.pkg.github.com/ramakrishnankv
-to me added in .npmrc file with the project scope which means the .npmrc file should be sibling of package.json or .gitignore, etc.
+The process to publish package is completed and can be imported to package.json of another project as "photo-gallery" : "1.0.0"
 
-Create git repository and use git to clone the repo.
-For eg: git@github.com:ramakrishnankv/nodepublish.git
-command line: git remote add git@github.com:ramakrishnankv/nodepublish.git
-test: git remote -v
-
-Generate secret key to use git url
+## Version Cutting
 TODO
+
+
+
+
 
 
 
