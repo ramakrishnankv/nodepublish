@@ -1,4 +1,4 @@
-# nodepublish
+# npm-publish
 # Publishing packages to npm 
 
 ## Prerequisite
